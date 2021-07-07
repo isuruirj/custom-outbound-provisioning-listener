@@ -70,10 +70,6 @@ public class CustomOutboundProvisioningListener extends DefaultInboundUserProvis
         }
 
         log.debug("custom provisioning listener, doPostSetUserClaimValues inbound attributes:" + inboundAttributes);
-        if (inboundAttributes.containsKey(MODIFIED_CLAIM)) {
-            inboundAttributes.remove(MODIFIED_CLAIM);
-            log.debug(MODIFIED_CLAIM + "removed from inbound attributes");
-        }
         return super.doPreSetUserClaimValues(userName, inboundAttributes, profileName, userStoreManager);
     }
 
